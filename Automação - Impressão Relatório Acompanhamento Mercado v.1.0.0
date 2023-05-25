@@ -1,0 +1,10 @@
+from time import sleep
+import pyautogui as pa
+
+# clica infinitamente em um local da tela
+try:
+    while True:
+        pa.click(x=800, y=400)
+        sleep(3)
+except:
+    pa.alert('   ❌ Impressão abortada!')
