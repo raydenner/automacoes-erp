@@ -1,0 +1,40 @@
+import pyautogui as pa
+from time import sleep
+
+# usuário define intervalo de numeração das cargas PV
+pa.alert("Rotina para Finalização de Cargas PV")
+# sleep(0.5)
+carga_inicial = pa.prompt("Digite o nº da primeira Carga PV:")
+# sleep(0.5)
+carga_final = pa.prompt("Agora digite o nº da última Carga PV:")
+
+# cria uma lista com o intervalo das cargas fornecidas
+lista_cargas = list(range(carga_inicial, carga_final+1))
+
+# abrir rotina no TMS
+pa.click(x=1, y=1)
+pa.hotkey('alt', 't', 'y', '7')
+sleep(3)
+
+# posição da caixa de seleção da carga (x=35, y=168)
+for carga in lista_cargas:
+    pa.click(x=35, y=168, clicks=2)
+    pa.press('backspace')
+    pa.write(carga_inicial)
+    sleep(0.5)
+    pa.press('enter')
+    sleep(3)
+    pa.press('f3')
+    sleep(3)
+
+# insere o valor A VISTA da Carga PV no campo Dinheiro e finaliza
+    pa.click(x=680, y=230, clicks=2)
+    pa.hotkey('ctrl', 'c')
+    sleep(3)
+    pa.press('tab')
+    sleep(3)
+    pa.hotkey('ctrl', 'v')
+    sleep(3)
+    pa.press('tab')
+    pa.click(x=562, y=568)
+    sleep(6)
