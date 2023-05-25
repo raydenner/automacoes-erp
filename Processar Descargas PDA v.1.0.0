@@ -1,0 +1,13 @@
+import pyautogui as pg
+from time import sleep
+
+# 58 setores
+for i in range (1, 58):
+    posicao = pg.position
+    pg.click(x=170, y=489)
+    sleep(3)
+    pg.click(x=218, y=508)
+    sleep(3)
+    pg.press('enter')
+    sleep(3)
+    pg.press('down')
