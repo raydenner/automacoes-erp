@@ -1,0 +1,32 @@
+import pyautogui as pa
+from time import sleep
+
+# lista dos veículos
+lista_veiculos = ['GOL POX-5717', 'GOL POX-6447', 'GOL POX-4367', 'GOL POX-4447', 'GOL POX-4527', 
+                  'GOL POX-4277', 'GOL POX-4917', 'FIAT NQU-7699', 'FIAT NUP-6695', 'FIAT NUV-1916',
+                  'FIAT NRA-2635', 'FIAT OCT-4788', 'FIAT MVD-6317', 'FIAT NRE-1496', 'FIAT OEG-0330',
+                  'FIAT NUM-3763', 'PALIO OSL-5590', 'PALIO OSL-5310', 'PALIO OSL-5240', 'PALIO PMD-5530', 
+                  'PALIO JVX-0782', 'IVECO PIE-5740', 'STRADA QUD-0C53', 'DOBLO NRD-9885', 'DOBLO HXX-6017',
+                  'FIORINO HGG-2635', 'PAMPA HUK-0620', 'VAN SPRINT PTO-4584', 'VAN SPRINT OIT-4237',
+                  'CAMINHÃO OXW-3790', 'CAMINHÃO HXX-0259', 'CAMINHÃO NHJ-3A64']
+                  
+sleep(3)
+
+# percorre a lista dos veículos, imprimindo a página do controle
+try:
+    for veiculo in lista_veiculos:
+        # zoom Excel 100%
+        pa.click(x=673, y=328)
+        sleep(0.5)
+        pa.press('backspace')
+        pa.write(veiculo)
+        pa.press('enter')
+        sleep(1)
+        pa.hotkey('ctrl', 'p')
+        sleep(2)
+        pa.press('enter')
+        sleep(3)
+except:
+    pa.alert('Impressão abortada!')
+finally:
+    pa.alert('          Impressão concluída! \n        RD Soluções em T.I.')
