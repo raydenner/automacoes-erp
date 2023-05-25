@@ -1,0 +1,16 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+import pyautogui as pa
+
+cargaPV = pa.prompt(text='Digite o número da Carga PV a ser localizada: ')
+
+nav = webdriver.Edge()
+nav.get('https://192.168.2.100/sobral/canhotos/index.php')
+nav.find_element(By.XPATH, '//*[@id="details-button"]').click()
+nav.find_element(By.XPATH, '//*[@id="proceed-link"]').click()
+nav.find_element(By.XPATH, '/html/body/section/div/div/div/div[2]/form/div[1]/div/input').send_keys('rjsobral')
+nav.find_element(By.XPATH, '/html/body/section/div/div/div/div[2]/form/div[2]/div/input').send_keys('9191')
+nav.find_element(By.XPATH, '/html/body/section/div/div/div/div[2]/form/button').click()
+nav.find_element(By.XPATH, '/html/body/form/input[1]').send_keys(cargaPV)
+nav.find_element(By.XPATH, '/html/body/form/input[2]').click()
