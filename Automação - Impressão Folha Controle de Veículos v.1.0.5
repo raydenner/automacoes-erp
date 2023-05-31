@@ -8,8 +8,7 @@ lista_veiculos = ['GOL POX-5717', 'GOL POX-6447', 'GOL POX-4367', 'GOL POX-4447'
                   'FIAT NUM-3763', 'PALIO OSL-5590', 'PALIO OSL-5310', 'PALIO OSL-5240', 'PALIO PMD-5530', 
                   'PALIO JVX-0782', 'IVECO PIE-5740', 'STRADA QUD-0C53', 'DOBLO NRD-9885', 'DOBLO HXX-6017',
                   'FIORINO HGG-2635', 'PAMPA HUK-0620', 'VAN SPRINT PTO-4584', 'VAN SPRINT OIT-4237',
-                  'CAMINHÃO OXW-3790', 'CAMINHÃO HXX-0259', 'CAMINHÃO NHJ-3A64']
-                  
+                  'CAMINHAO OXW-3790', 'CAMINHAO HXX-0259', 'CAMINHAO NHJ-3A64']
 sleep(3)
 
 # percorre a lista dos veículos, imprimindo a página do controle
@@ -26,6 +25,16 @@ try:
         sleep(2)
         pa.press('enter')
         sleep(3)
+    pa.click(x=673, y=328)
+    sleep(0.5)
+    pa.press('backspace')
+    pa.press('enter')
+    pa.hotkey('ctrl', 'p')
+    sleep(2)
+    pa.press('tab')
+    pa.write(5)
+    pa.press('enter')
+    sleep(3)
 except:
     pa.alert('Impressão abortada!')
 finally:
